@@ -106,6 +106,14 @@ export default function HiringMantraLanding() {
                 <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-all duration-300"></span>
               </Link>
               <Link
+                href="/virtual-hr"
+                className="relative px-4 py-2 text-sm font-medium text-gray-200 hover:text-primary transition-all duration-300 group"
+              >
+                <span className="relative z-10">Virtual HR Services</span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-all duration-300"></span>
+              </Link>
+              <Link
                 href="/how-it-works"
                 className="relative px-4 py-2 text-sm font-medium text-gray-200 hover:text-primary transition-all duration-300 group"
               >
