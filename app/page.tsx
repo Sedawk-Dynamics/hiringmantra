@@ -1,38 +1,24 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import {
-  ArrowRight,
-  Sparkles,
-  Target,
-  Users,
-  TrendingUp,
-  Globe,
-  Shield,
-  Zap,
-  CheckCircle2,
-  Linkedin,
-  Twitter,
-  Instagram,
-  Facebook,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react"
+import { useRef } from "react"
+
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { SignInModal } from "@/components/sign-in-modal" // Fixed import paths to use correct file names
-import { WhatsAppButton } from "@/components/whatsapp-button"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { ArrowRight, Sparkles, Target, Users, TrendingUp, Globe, Zap, CheckCircle2, Award } from "lucide-react"
 import { ServicesCarousel } from "@/components/services-carousel"
 
-export default function HiringMantraLanding() {
+export default function Home() {
+  const [mounted, setMounted] = useState(false)
   const [scrollY, setScrollY] = useState(0)
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set())
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
-  const [whatsappHover, setWhatsappHover] = useState(false)
-  const [isSignInOpen, setIsSignInOpen] = useState(false) // Added state for sign-in modal
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     let ticking = false
@@ -74,98 +60,8 @@ export default function HiringMantraLanding() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-primary/30 backdrop-blur-2xl bg-gradient-to-r from-black/95 via-primary/5 to-black/95 shadow-2xl shadow-primary/5">
-        <div className="container mx-auto px-6 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 group">
-              <div className="relative">
-                <Image
-                  src="/images/hm-20horizontal-20png-20-282-29-20-282-29.png"
-                  alt="Hiring Mantra"
-                  width={420}
-                  height={84}
-                  className="h-24 w-auto brightness-110 hover:brightness-125 transition-all duration-300"
-                />
-              </div>
-            </div>
-            <div className="hidden md:flex items-center gap-1">
-              <Link
-                href="/"
-                className="relative px-4 py-2 text-sm font-medium text-gray-200 hover:text-primary transition-all duration-300 group"
-              >
-                <span className="relative z-10">Home</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-all duration-300"></span>
-              </Link>
-              <Link
-                href="/services"
-                className="relative px-4 py-2 text-sm font-medium text-gray-200 hover:text-primary transition-all duration-300 group"
-              >
-                <span className="relative z-10">Services</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-all duration-300"></span>
-              </Link>
-              <Link
-                href="/virtual-hr"
-                className="relative px-4 py-2 text-sm font-medium text-gray-200 hover:text-primary transition-all duration-300 group"
-              >
-                <span className="relative z-10">Virtual HR Services</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-all duration-300"></span>
-              </Link>
-              <Link
-                href="/how-it-works"
-                className="relative px-4 py-2 text-sm font-medium text-gray-200 hover:text-primary transition-all duration-300 group"
-              >
-                <span className="relative z-10">How It Works</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-all duration-300"></span>
-              </Link>
-              <Link
-                href="/about"
-                className="relative px-4 py-2 text-sm font-medium text-gray-200 hover:text-primary transition-all duration-300 group"
-              >
-                <span className="relative z-10">About</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-all duration-300"></span>
-              </Link>
-              <Link
-                href="/resources"
-                className="relative px-4 py-2 text-sm font-medium text-gray-200 hover:text-primary transition-all duration-300 group"
-              >
-                <span className="relative z-10">Resources</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-all duration-300"></span>
-              </Link>
-              <Link
-                href="/careers"
-                className="relative px-4 py-2 text-sm font-medium text-gray-200 hover:text-primary transition-all duration-300 group"
-              >
-                <span className="relative z-10">Careers</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-                <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-all duration-300"></span>
-              </Link>
-            </div>
-            <div className="flex items-center gap-3">
-              <Button
-                variant="ghost"
-                onClick={() => setIsSignInOpen(true)}
-                className="hidden lg:inline-flex text-gray-200 hover:text-primary hover:bg-primary/10 border border-primary/20 hover:border-primary/50 transition-all duration-300"
-              >
-                Sign In
-              </Button>
-              <Link href="/consultation">
-                <Button className="bg-gradient-to-r from-primary to-cyan-400 text-black hover:from-primary/90 hover:to-cyan-500 font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300">
-                  Get Consultation
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6">
         <div className="absolute inset-0 animated-gradient-bg" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
         <div
@@ -363,11 +259,11 @@ export default function HiringMantraLanding() {
                 gradient: "from-cyan-500/20 to-cyan-500/5",
               },
               {
-                icon: Shield,
-                title: "Empower Compliance",
-                description: "Automated payroll with full regulatory compliance designed for growing businesses",
-                features: ["Multi-country support", "Tax compliance", "Automated processing"],
-                gradient: "from-primary/20 to-cyan-500/10",
+                icon: Award,
+                title: "Recognition Programs",
+                description: "Boost employee morale with tailored recognition and rewards programs",
+                features: ["Personalized recognition", "Employee appreciation", "Reward ceremonies"],
+                gradient: "from-primary/15 to-cyan-500/15",
               },
               {
                 icon: Zap,
@@ -811,28 +707,79 @@ export default function HiringMantraLanding() {
                   target="_blank"
                   className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors duration-300"
                 >
-                  <Linkedin className="w-5 h-5 text-primary" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5 text-primary"
+                  >
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 01-6-6 6 6 0 016-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <rect x="22" y="9" width="4" height="12" />
+                  </svg>
                 </Link>
                 <Link
                   href="https://twitter.com/hiringmantra"
                   target="_blank"
                   className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors duration-300"
                 >
-                  <Twitter className="w-5 h-5 text-primary" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5 text-primary"
+                  >
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-9.78 3c-3.53 0-6.52-2.01-7.89-5.19A10.9 10.9 0 003 23c7.55 0 13.7-6.25 13.7-13.7 0-.26 0-.52-.01-.78" />
+                  </svg>
                 </Link>
                 <Link
                   href="https://instagram.com/hiringmantra"
                   target="_blank"
                   className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors duration-300"
                 >
-                  <Instagram className="w-5 h-5 text-primary" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5 text-primary"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="12 22 9.5 16.84 11.08 14 22 11.08" />
+                  </svg>
                 </Link>
                 <Link
                   href="https://facebook.com/hiringmantra"
                   target="_blank"
                   className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors duration-300"
                 >
-                  <Facebook className="w-5 h-5 text-primary" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5 text-primary"
+                  >
+                    <path d="M18 2h3a5 5 0 0 1 5 5v3H6v-3a5 5 0 0 1 5-5h6z" />
+                    <path d="M17 8h1a3 3 0 0 1 3 3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-6a3 3 0 0 1 3-3h10z" />
+                    <line x1="17" y1="8" x2="17" y2="10" />
+                    <circle cx="17.5" cy="14.5" r="4.5" />
+                  </svg>
                 </Link>
               </div>
             </div>
@@ -877,7 +824,19 @@ export default function HiringMantraLanding() {
               <h3 className="text-lg font-semibold text-primary mb-6">Contact</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
                   <a
                     href="mailto:hello@hiringmantra.com"
                     className="text-gray-400 hover:text-primary transition-colors duration-300"
@@ -886,7 +845,19 @@ export default function HiringMantraLanding() {
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h2v3h2V8a8 8 0 0 1 16 0v3h2v7a2 2 0 0 1-2 2z" />
+                    <path d="M12 3L2 12h3v8h6v-6h6v6h3L12 3z" />
+                  </svg>
                   <a
                     href="tel:+919625667062"
                     className="text-gray-400 hover:text-primary transition-colors duration-300"
@@ -895,7 +866,19 @@ export default function HiringMantraLanding() {
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                  >
+                    <path d="M12 20s8-7.18 8-9.8A8 8 0 0 0 12 3a8 8 0 0 0-8 5.2C4 12.82 4 20 4 20z" />
+                    <polyline points="6 9 12 17 18 9" />
+                  </svg>
                   <address className="text-gray-400 not-italic leading-relaxed">
                     5th Floor Plot No. 4, Tech Garden Sector 35,
                     <br />
@@ -927,12 +910,6 @@ export default function HiringMantraLanding() {
           </div>
         </div>
       </footer>
-
-      {/* Floating WhatsApp Button */}
-      <WhatsAppButton />
-
-      {/* Sign In Modal */}
-      <SignInModal isOpen={isSignInOpen} onClose={() => setIsSignInOpen(false)} />
     </div>
   )
 }

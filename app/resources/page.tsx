@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ArrowRight, Calendar } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
 
 export default function ResourcesPage() {
   const resources = [
@@ -60,49 +59,6 @@ export default function ResourcesPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-primary/20 backdrop-blur-xl bg-gradient-to-r from-black/80 via-primary/10 to-black/80">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/images/hm-20horizontal-20png-20-282-29-20-282-29.png"
-                alt="Hiring Mantra"
-                width={420}
-                height={84}
-                className="h-24 w-auto brightness-110 hover:brightness-125 transition-all duration-300"
-              />
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link
-                href="/services"
-                className="text-sm text-gray-300 hover:text-primary transition-colors duration-300"
-              >
-                Services
-              </Link>
-              <Link
-                href="/how-it-works"
-                className="text-sm text-gray-300 hover:text-primary transition-colors duration-300"
-              >
-                How It Works
-              </Link>
-              <Link href="/about" className="text-sm text-gray-300 hover:text-primary transition-colors duration-300">
-                About
-              </Link>
-              <Link href="/resources" className="text-sm text-primary font-medium transition-colors duration-300">
-                Resources
-              </Link>
-              <Link href="/careers" className="text-sm text-gray-300 hover:text-primary transition-colors duration-300">
-                Careers
-              </Link>
-            </div>
-            <Button className="bg-primary text-black hover:bg-primary/90 font-semibold pulse-glow">
-              Get Consultation
-            </Button>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         <div className="absolute inset-0 animated-gradient-bg" />
