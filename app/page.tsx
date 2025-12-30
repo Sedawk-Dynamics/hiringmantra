@@ -702,6 +702,7 @@ export default function Home() {
 
               {/* Social Media Icons */}
               <div className="flex gap-4 pt-4">
+                {/* LinkedIn Icon */}
                 <Link
                   href="https://linkedin.com/company/hiringmantra"
                   target="_blank"
@@ -717,11 +718,12 @@ export default function Home() {
                     strokeLinejoin="round"
                     className="w-5 h-5 text-primary"
                   >
-                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 01-6-6 6 6 0 016-6z" />
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
                     <rect x="2" y="9" width="4" height="12" />
-                    <rect x="22" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
                   </svg>
                 </Link>
+                {/* Twitter/X Icon */}
                 <Link
                   href="https://twitter.com/hiringmantra"
                   target="_blank"
@@ -737,9 +739,10 @@ export default function Home() {
                     strokeLinejoin="round"
                     className="w-5 h-5 text-primary"
                   >
-                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-9.78 3c-3.53 0-6.52-2.01-7.89-5.19A10.9 10.9 0 003 23c7.55 0 13.7-6.25 13.7-13.7 0-.26 0-.52-.01-.78" />
+                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                   </svg>
                 </Link>
+                {/* Instagram Icon */}
                 <Link
                   href="https://instagram.com/hiringmantra"
                   target="_blank"
@@ -756,10 +759,11 @@ export default function Home() {
                     className="w-5 h-5 text-primary"
                   >
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                    <polyline points="12 22 9.5 16.84 11.08 14 22 11.08" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                   </svg>
                 </Link>
+                {/* Facebook Icon */}
                 <Link
                   href="https://facebook.com/hiringmantra"
                   target="_blank"
@@ -775,10 +779,7 @@ export default function Home() {
                     strokeLinejoin="round"
                     className="w-5 h-5 text-primary"
                   >
-                    <path d="M18 2h3a5 5 0 0 1 5 5v3H6v-3a5 5 0 0 1 5-5h6z" />
-                    <path d="M17 8h1a3 3 0 0 1 3 3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-6a3 3 0 0 1 3-3h10z" />
-                    <line x1="17" y1="8" x2="17" y2="10" />
-                    <circle cx="17.5" cy="14.5" r="4.5" />
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                   </svg>
                 </Link>
               </div>
