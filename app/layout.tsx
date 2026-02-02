@@ -13,14 +13,13 @@ export const metadata: Metadata = {
   description: "Transparent HR solutions and executive hiring that power growth from startups to C-suite.",
   generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: "/favicon.ico",
-        sizes: "any",
-      },
-    ],
-    apple: "apple-touch-icon.jpg",
-  },
+  icon: [
+    { url: "/favicon.ico", sizes: "any" },
+    { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+  ],
+  apple: "/apple-touch-icon.png",
+},
+
 }
 
 export default function RootLayout({
