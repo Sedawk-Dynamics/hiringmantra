@@ -116,9 +116,9 @@ export default function Home() {
 
             <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
-                { label: "Startups Powered", value: "500+" },
-                { label: "Success Rate", value: "98%" },
-                { label: "Countries", value: "50+" },
+                { label: "Startups Powered", value: "100+" },
+                { label: "Success Rate", value: "92%" },
+                { label: "Countries", value: "5+" },
                 { label: "Time Saved", value: "70%" },
               ].map((stat, i) => (
                 <div
@@ -409,10 +409,10 @@ export default function Home() {
               </p>
               <div className="space-y-4">
                 {[
-                  "Trusted by 500+ startups and SMEs globally",
-                  "98% client satisfaction rate",
+                  "Trusted by 100+ startups and SMEs globally",
+                  "92% client satisfaction rate",
                   "Average 70% reduction in time-to-hire",
-                  "Present in 50+ countries worldwide",
+                  "Present in 5+ countries worldwide",
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -464,31 +464,31 @@ export default function Home() {
             className={`max-w-3xl mx-auto text-center mb-16 ${visibleSections.has("testimonials") ? "slide-up" : "opacity-0"}`}
           >
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-              Trusted by <span className="gradient-text-multi">global leaders</span>
+             Powering hiring<span className="gradient-text-multi"> for modern businesses</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {[
-              {
-                quote:
-                  "Their expertise in AI-powered hiring transformed our digital presence completely. We couldn't be happier with the results.",
-                author: "Sarah Chen",
-                role: "CEO, TechStart Inc",
-              },
-              {
-                quote:
-                  "Hiring Mantra helped us scale from 10 to 100 employees in just 6 months. Their strategic approach is unmatched.",
-                author: "Michael Rodriguez",
-                role: "Founder, Growth Labs",
-              },
-              {
-                quote:
-                  "The best HR partner we've worked with. Professional, efficient, and truly understands startup culture.",
-                author: "Emily Watson",
-                role: "COO, InnovateNow",
-              },
-            ].map((testimonial, i) => (
+  {
+    quote:
+      "Their expertise in AI-powered hiring completely transformed our recruitment process. We saw better candidates and faster hiring cycles.",
+    author: "Amit Sharma",
+    role: "HR Director, HutekHr",
+  },
+  {
+    quote:
+      "Hiring Mantra helped us scale from 15 to 120 employees within months. Their structured hiring strategy really works.",
+    author: "Priya Mehta",
+    role: "Founder, FinEdge Solutions",
+  },
+  {
+    quote:
+      "One of the most reliable HR partners we've worked with. They truly understand both startup and enterprise hiring needs.",
+    author: "John Miller",
+    role: "VP Operations, NexaTech USA",
+  },
+].map((testimonial, i) => (
               <Card
                 key={i}
                 className={`gradient-border p-8 bg-white/[0.02] hover:scale-105 transition-all duration-500 cursor-pointer group ${visibleSections.has("testimonials") ? "scale-in" : "opacity-0"}`}
@@ -725,7 +725,7 @@ export default function Home() {
                 </Link>
                 {/* Twitter/X Icon */}
                 <Link
-                  href="https://twitter.com/hiringmantra"
+                  href="https://x.com/HiringMantra8"
                   target="_blank"
                   className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors duration-300"
                 >
@@ -765,7 +765,7 @@ export default function Home() {
                 </Link>
                 {/* Facebook Icon */}
                 <Link
-                  href="https://facebook.com/hiringmantra"
+                  href="https://www.facebook.com/hiringmantra01/"
                   target="_blank"
                   className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors duration-300"
                 >
@@ -896,7 +896,7 @@ export default function Home() {
 
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-500">© 2025 Hiring Mantra. All rights reserved.</p>
+            <p className="text-sm text-gray-500">© 2025 Hiring Mantra Global Private Limited. All rights reserved.</p>
             <div className="flex gap-6 text-sm text-gray-500">
               <Link href="/privacy-policy" className="hover:text-primary transition-colors duration-300">
                 Privacy Policy

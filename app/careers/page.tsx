@@ -8,6 +8,14 @@ import Link from "next/link"
 export default function CareersPage() {
   const openPositions = [
     {
+      title: "Hiring HR Intern",
+      department: "Human Resources",
+      location: "5th Floor, Tech Garden, Plot No 4, Sector 35, Udyog Vihar-VII, Gurugram, Haryana, 122004, India",
+      type: "Full-time",
+      description:
+        "Support end-to-end recruitment processes, including sourcing, screening, and coordinating interviews, while assisting in maintaining candidate relationships and HR operations",
+    },
+    {
       title: "Senior Recruitment Consultant",
       department: "Recruitment",
       location: "Mumbai, India",
